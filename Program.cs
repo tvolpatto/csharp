@@ -39,13 +39,13 @@ void ExibirOpcoesDoMenu()
     
     switch (opcaoEscolhidaNumerica)
     {
-        case 1: RegistrarBanda();
+        case 1: RegistrarBanda("");
             break;
         case 2: MostrarBandasRegistradas();
             break;
         case 3: AvaliarBanda();
             break;
-        case 4: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+        case 4: CalcularMediaDaBanda();
             break;
         case 0: Console.WriteLine("Tchau tchau :)");
             break;
@@ -57,11 +57,15 @@ void ExibirOpcoesDoMenu()
 /*
     Registers a new band by prompting the user for its name and adding it to the list of bands.
 */
-void RegistrarBanda()
+void RegistrarBanda(string nomeDaBanda)
 {   
-    ExibirTituloDaOpcao("Registro de bandas");
-    Console.Write("Digite o nome da banda que deseja registrar: ");
-    string nomeDaBanda = Console.ReadLine()!;
+    if( nomeDaBanda == null || nomeDaBanda == string.Empty)
+    {
+         ExibirTituloDaOpcao("Registro de bandas");
+        Console.Write("Digite o nome da banda que deseja registrar: ");
+        nomeDaBanda = Console.ReadLine()!;
+    }
+      
     bandasRegistradas.Add(nomeDaBanda, new List<int>());
     Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!");
     Thread.Sleep(2000);
@@ -124,9 +128,8 @@ void AvaliarBanda()
     else
     {
         Console.WriteLine($"A banda {nomeDaBanda} não está registrada.");
-        Console.WriteLine("\nDigite uma tecla para voltar ao menu principal");
-        Console.ReadKey();
-        ExibirOpcoesDoMenu();
+        AutoRegistrarBanda(nomeDaBanda);
+       
     }
     
     Console.WriteLine("\nDigite uma tecla para voltar ao menu principal");
@@ -136,5 +139,43 @@ void AvaliarBanda()
     Console.Clear();
 }
 
+/*
+    Calculates and displays the average rating for a specified band.
+*/
+void CalcularMediaDaBanda()
+{
+    ExibirTituloDaOpcao("Média da banda");
+    Console.Write("Digite o nome da banda que deseja calcular a média: ");
+    string nomeDaBanda = Console.ReadLine()!;
+    if (bandasRegistradas.ContainsKey(nomeDaBanda))
+    {
+        List<int> notasDaBanda = bandasRegistradas[nomeDaBanda];
+        double media = notasDaBanda.Count > 0 ? notasDaBanda.Average() : 0;
+        Console.WriteLine($"A média da banda {nomeDaBanda} é {media}");
+    }
+    else
+    {
+        Console.WriteLine($"A banda {nomeDaBanda} não está registrada.");
+        AutoRegistrarBanda(nomeDaBanda);
+    }
+
+    Console.WriteLine("\nDigite uma tecla para voltar ao menu principal");
+    Console.ReadKey();
+    ExibirOpcoesDoMenu();
+}
+/*
+    Prompts the user to automatically register a band if it is not already registered.
+    string nomeDaBanda: The name of the band to potentially register.
+*/
+void AutoRegistrarBanda(string nomeDaBanda)
+{
+   Console.Write("Digite S para registrar a banda automaticamente ou qualquer outra tecla para não registrar: ");
+   string confirmaRegistro = Console.ReadLine()!;
+   if (confirmaRegistro.ToUpper() == "S")
+   {
+       RegistrarBanda(nomeDaBanda);
+   }
+   
+}
 
 ExibirOpcoesDoMenu();
