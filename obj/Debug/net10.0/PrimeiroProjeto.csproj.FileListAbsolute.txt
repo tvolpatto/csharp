@@ -1,0 +1,15 @@
+C:\Projects\C_Sharp\bin\Debug\net10.0\PrimeiroProjeto.exe
+C:\Projects\C_Sharp\bin\Debug\net10.0\PrimeiroProjeto.deps.json
+C:\Projects\C_Sharp\bin\Debug\net10.0\PrimeiroProjeto.runtimeconfig.json
+C:\Projects\C_Sharp\bin\Debug\net10.0\PrimeiroProjeto.dll
+C:\Projects\C_Sharp\bin\Debug\net10.0\PrimeiroProjeto.pdb
+C:\Projects\C_Sharp\obj\Debug\net10.0\PrimeiroProjeto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\C_Sharp\obj\Debug\net10.0\PrimeiroProjeto.AssemblyInfoInputs.cache
+C:\Projects\C_Sharp\obj\Debug\net10.0\PrimeiroProjeto.AssemblyInfo.cs
+C:\Projects\C_Sharp\obj\Debug\net10.0\PrimeiroProjeto.csproj.CoreCompileInputs.cache
+C:\Projects\C_Sharp\obj\Debug\net10.0\PrimeiroProjeto.sourcelink.json
+C:\Projects\C_Sharp\obj\Debug\net10.0\PrimeiroProjeto.dll
+C:\Projects\C_Sharp\obj\Debug\net10.0\refint\PrimeiroProjeto.dll
+C:\Projects\C_Sharp\obj\Debug\net10.0\PrimeiroProjeto.pdb
+C:\Projects\C_Sharp\obj\Debug\net10.0\PrimeiroProjeto.genruntimeconfig.cache
+C:\Projects\C_Sharp\obj\Debug\net10.0\ref\PrimeiroProjeto.dll
